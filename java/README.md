@@ -1,3 +1,25 @@
+## 목차
+- [Java 의 특징](#Java 의 특징)
+- [객체지향 프로그래밍의 4가지 특징 (OOP: Object-Oriented Programming)](#객체지향 프로그래밍의 4가지 특징 (OOP: Object-Oriented Programming))
+- [객체지향 설계의 5원칙](#객체지향 설계의 5원칙)
+- [자바 프로그램 동작 과정](#자바 프로그램 동작 과정)
+- [JVM 의 구조](#JVM 의 구조)
+- [Java 의 원시 타입과 참조 타입](#Java 의 원시 타입과 참조 타입)
+- [try-with-resources](#try-with-resources)
+- [new String vs literal](#new String vs literal)
+- [String vs StringBuffer vs StringBuilder 의 차이](#String vs StringBuffer vs StringBuilder 의 차이)
+- [접근 제한자](#접근 제한자)
+- [static](#static)
+- [클래스 초기화 순서](#클래스 초기화 순서)
+- [Reflection](#Reflection)
+- [Error vs Exception](#Error vs Exception)
+- [Optional](#Optional)
+- [Collection Framework](#Collection Framework)
+- [Generic](#Generic)
+- [final vs finally vs finalize](#final vs finally vs finalize)
+- [직렬화(Serialize)](#직렬화(Serialize))
+
+
 ### Java 의 특징
 
 - 객체지향적 프로그래밍 언어
@@ -93,7 +115,7 @@
     - [https://catsbi.oopy.io/df0df290-9188-45c1-b056-b8fe032d88ca](https://catsbi.oopy.io/df0df290-9188-45c1-b056-b8fe032d88ca)
     - [https://shrtorznzl.tistory.com/82](https://shrtorznzl.tistory.com/82)
 
-### JVM(Java Virtual Machine) 의 구조
+### JVM 의 구조
 
 #### JVM 의 구조
 
@@ -154,7 +176,7 @@ JVM 의 메모리 영역은 역할에 따라 분리되어 있다.
     - 비교적 더 많은 메모리 영역을 사용한다.
     - Heap Area 에 저장되어 접근이 느리며 GC 의 관리를 받는다.
 
-### try-with-resources 란?
+### try-with-resources
 
 자바에서 외부 자원에 접근하는 경우 동시성 문제를 일으키지 않기 위해 자원에 대해 open 한 스레드가 해당 자원에 대해 권한을 가지며, 사용을 마칠 경우 close 를 통해 자원을 닫아 다른 스레드가 접근할 수 있도록 설정해야 한다.
 
@@ -165,7 +187,7 @@ try (…) 안에 선언한 외부 자원을 open 하며 별도로 close 를 하�
 - 참고 사이트
     - [https://dev-coco.tistory.com/20](https://dev-coco.tistory.com/20)
 
-### new String vs “”
+### new String vs literal
 
 자바에서 문자열은 기본적으로 불변이며 Thread-Safe 하다. 불변의 속성을 이용하여 중복적으로 선언되는 문자열을 JVM 자체에서 중복되지 않도록 관리하여 성능을 높였다. String 이 별도로 저장되는 영역을 **String Constant Pool** 이라고 한다.
 
@@ -180,7 +202,7 @@ String 이라는 클래스의 인스턴스가 생성되는 것이므로 JVM 의 
 - 참고 사이트
     - [https://wonit.tistory.com/588](https://wonit.tistory.com/588)
 
-### String, StringBuffer, StringBuilder 의 차이
+### String vs StringBuffer vs StringBuilder 의 차이
 
 자바에서 문자열을 다루는 클래스는 **String, StringBuffer, StringBuilder** 총 3가지가 있다. 가장 많이 사용하는 **String 클래스는 ‘불변’** 의 속성 덕분에 JVM 의 Heap Area 에서 별도로 관리(캐싱)하여 메모리를 절약한다는 이점이 있다. 하지만 문자열에 대한 연산이 많을 경우 오히려 불변 속성 때문에 Heap Area 에 수많은 문자열 데이터가 쌓여 GC 의 동작을 가속하는 문제가 발생할 수 있다.
 
@@ -317,7 +339,7 @@ MyArray<Integer> myArr = new MyArray<Integer>();
 - 참고 사이트
     - [http://www.tcpschool.com/java/java_generic_concept](http://www.tcpschool.com/java/java_generic_concept)
 
-### final, finally, finalize
+### final vs finally vs finalize
 
 - final
     - 클래스, 메서드, 변수, 인자에 사용할 수 있으며 단 한번만 할당하고 싶을 때 사용한다.
