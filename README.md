@@ -9,3 +9,4 @@
 - [Stacked-Book/java-deep-study](https://github.com/Stacked-Book/java-deep-study)
 - [binghe819/tech-interview](https://github.com/binghe819/tech-interview)
 - [gyoogle/tech-interview-for-developer](https://github.com/gyoogle/tech-interview-for-developer)
+- [신입 개발자 기술면접 질문 정리](https://dev-coco.tistory.com/category/%F0%9F%93%8CETC/Tech%20Interview)
